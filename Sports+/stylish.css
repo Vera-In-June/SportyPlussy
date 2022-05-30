@@ -1,0 +1,30 @@
+.quote{
+  color: rgba(42, 43, 44, 100); <!-- Dark grey, same as logo -->
+  font-size: 25px;
+  font-family: times new roman;
+}
+.paragraph{
+  color: rgba(42, 43, 44, 100); <!-- Dark grey, same as logo -->
+  font-size: 20px;
+  font-family: times new roman;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(42, 43, 44, 100);
+}
+li{
+  float: left;
+}
+a{
+  display: block;
+  padding: 8px;
+}
+li a:hover{
+  background-color: rgba(0, 0, 255, 50);
+}
+.active{
+  background-color: rgba(0, 0, 255, 100);
+}
