@@ -2,16 +2,23 @@ body{
   background-image: url('images/relay-race-655353__340.jpg');
   background-attachment: fixed;
   background-size: cover;
+  height: 100%; /* this is the first height call, every other following "100%" will fit seamlessly to the body's 100%. */
 }
 .logo{
   max-width: 150px;
   max-height: 150px;
-  margin-left: 43%;
-  position: absolute;
+  /* margin-left: 43%; */
+  /* This will prevent the text from moving around the element as it's no long considered. */
+  /* "The element is positioned relative to its first positioned (not static) ancestor element" */
+  /* position: absolute; */
+  display: block; /* Allows you to move it around freely */
+  margin: auto;
   z-index: 4;
+  padding-top: 30px; /* Change this to whatever makes you feel nice */
 }
 header{
-  margin-top: 165px;
+  /* margin-top: 165px; */
+  padding-top: 30px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -31,17 +38,37 @@ p{
   border-style: none, none, none, double;
 }
 .svgelem{
-   margin-left: 29%;
-   margin-right: auto;
+  /* margin-left being 29%, right idea but wrong element. */
+   /* margin-left: 29%; */
+   /* margin-right: auto; */
    display: block;
    position: absolute;
    z-index: 1;
 }
-ul {
+/* replace the rect element with a div */
+.content {
+  /* rgba is weird in that the a value is between 0 and 1. */
+  background-color: rgba(230,230,230,calc(100/255));
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+.content * {
+  opacity: 1;
+}
+/* Center all p tags within the content div */
+.content p {
+  text-align: center;
+}
+.contact-info {
+  margin-top: 75px;
+}
+ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* I didn't change the rgba on this one tho */
   background-color: rgba(230, 230, 230, 100);
   text-decoration: none;
 }
@@ -60,9 +87,10 @@ li a:hover{
 }
 input[type=text] {
   width: 35%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  margin-left: 400px;
+  padding: 12px 20px; /* It might be worth completely replacing padding with width and height. */
+  margin: auto;
+  display: block; /* default for input is inline-block, we don't want it to be inline */
+  /* margin-left: 400px; */
   box-sizing: border-box;
   position: relative;
   z-index: 2;
